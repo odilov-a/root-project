@@ -1,8 +1,10 @@
 const cors = require("cors");
+const path = require("path");
 const dotenv = require("dotenv");
 const express = require("express");
 const mongoose = require("mongoose");
 const mongoSanitize = require("express-mongo-sanitize");
+
 
 dotenv.config();
 const router = require("./src/routes/router.js");
@@ -22,6 +24,8 @@ app.use(express.json());
 app.use(cors());
 app.use(mongoSanitize());
 app.use("/api", router);
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.get("/", (req, res) => {
   return res.json({ message: `API is running` });

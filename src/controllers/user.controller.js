@@ -2,6 +2,15 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User.js");
 const { sign } = require("../utils/jwt.js");
 
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find({ _id: { $ne: req.userId } }, "_id username");
+    return res.status(200).json({ data: users });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
 exports.registerUser = async (req, res) => {
   try {
     const { password, ...otherData } = req.body;

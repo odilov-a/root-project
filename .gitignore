@@ -1,6 +1,9 @@
 # Dependency directories
 node_modules/
 
+private.pem
+public.pem
+
 # Backups
 backups/
 .env
