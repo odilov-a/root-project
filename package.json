@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.2",
+    "mongoose-sequence": "^6.0.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "name": "root-project",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json server.js"
+  },
+  "author": "Akbar Odilov",
+  "license": "MIT",
+  "description": "root-project"
+}
