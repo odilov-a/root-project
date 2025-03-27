@@ -27,11 +27,11 @@ app.get("/", (req, res) => {
   return res.json({ message: `API is running` });
 });
 
-function startServerOnPort(port) {
+function server(port) {
   const listen = app.listen(port, "0.0.0.0", async () => {
     await connectDB();
     console.log(`API is running on port ${port}`);
   });
 }
 
-startServerOnPort(process.env.PORT);
+server(process.env.PORT);
